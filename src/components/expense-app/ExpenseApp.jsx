@@ -15,6 +15,10 @@ const ExpenseApp = () => {
     ]);
   };
 
+  const deleteTransaction = (id) => {
+    setTransactions((prevTrxs) => prevTrxs.filter((tr) => tr.id !== id));
+  };
+
   useEffect(() => {
     let inc = 0;
     let exp = 0;
@@ -35,7 +39,7 @@ const ExpenseApp = () => {
         expense={expense}
         addTransaction={addTransaction}
       />
-      <Transactions transactions={transactions} />
+      <Transactions transactions={transactions} onDelete={deleteTransaction} />
     </section>
   );
 };

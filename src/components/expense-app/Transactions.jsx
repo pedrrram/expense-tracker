@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import Transaction from './Transaction';
 
-const Transactions = ({ transactions }) => {
+const Transactions = ({ transactions, onDelete }) => {
   const [searchItem, setSearchItem] = useState('');
   const [filteredTransactions, setFilteredTransactions] =
     useState(transactions);
@@ -40,7 +40,7 @@ const Transactions = ({ transactions }) => {
 
       <div className="mt-4 text-slate-900">
         {filteredTransactions?.map((tr) => (
-          <Transaction key={tr.id} transaction={tr} />
+          <Transaction key={tr.id} transaction={tr} onDelete={onDelete}/>
         ))}
       </div>
     </section>

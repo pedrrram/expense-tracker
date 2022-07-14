@@ -15,10 +15,10 @@ const Overview = ({ income, expense, addTransaction }) => {
         </span>
         <div className="md:w-1/4 text-right">
           <button
-            className={`text-white font-thin bg-slate-900 rounded-lg px-5 py-2 ${
+            className={`font-thin bg-slate-900 rounded-lg px-5 py-2 ${
               isShow
                 ? 'bg-transparent text-slate-900 border border-slate-900'
-                : ''
+                : 'text-white'
             }`}
             onClick={() => setIsShow(!isShow)}
           >
