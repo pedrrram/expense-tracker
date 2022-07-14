@@ -25,7 +25,7 @@ const Form = ({ setIsShow, addTransaction }) => {
   return (
     <form
       onSubmit={submitHandler}
-      className="bg-slate-300 w-4/6 rounded-lg text-slate-900 flex flex-col items-center p-5 font-thin space-y-3"
+      className="bg-slate-300/50 w-4/6 rounded-lg text-slate-900 flex flex-col items-center p-5 font-thin space-y-3"
     >
       <input
         name="amount"

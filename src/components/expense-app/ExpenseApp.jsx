@@ -13,7 +13,6 @@ const ExpenseApp = () => {
       ...prevTrans,
       { id: Date.now(), ...transaction },
     ]);
-    console.log(transactions);
   };
 
   useEffect(() => {
@@ -29,7 +28,7 @@ const ExpenseApp = () => {
   }, [transactions]);
 
   return (
-    <section className="flex flex-col items-center w-full max-w-3xl bg-slate-200 rounded-lg text-slate-800 p-5">
+    <section className="flex flex-col items-center w-full max-w-3xl bg-slate-200 rounded-lg text-slate-800 p-5 mb-3">
       <h1>Expense App</h1>
       <Overview
         income={income}
