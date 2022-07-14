@@ -16,8 +16,10 @@ const Form = ({ setIsShow, addTransaction }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    addTransaction(transaction)
-    setIsShow(false);
+    if (transaction.amount > 0 && transaction.description !== '') {
+      addTransaction(transaction);
+      setIsShow(false);
+    }
   };
 
   return (
@@ -31,7 +33,6 @@ const Form = ({ setIsShow, addTransaction }) => {
         placeholder="Amount"
         min={0}
         className="w-3/4 bg-slate-200/90 outline-none px-4 py-2 rounded-md"
-        value={transaction.amount}
         onChange={changeHandler}
       />
       <input

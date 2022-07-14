@@ -10,8 +10,8 @@ const Overview = ({ income, expense, addTransaction }) => {
   return (
     <>
       <div className="w-full flex justify-evenly items-center my-3">
-        <span className="font-bold text-slate-900 text-2xl md:w-1/4">
-          Balance: {income && expense ? income - expense : null}
+        <span className="font-bold text-slate-900 text-2xl md:w-1/4 whitespace-nowrap">
+          Balance: ${income !== null && expense !== null && income - expense}
         </span>
         <div className="md:w-1/4 text-right">
           <button

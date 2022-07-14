@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Overview from './Overview';
 import Transactions from './Transactions';
 
 const ExpenseApp = () => {
-  const [expense, setExpense] = useState(undefined);
+  const [expense, setExpense] = useState(0);
   const [income, setIncome] = useState(0);
   const [transactions, setTransactions] = useState([]);
 
@@ -13,7 +13,20 @@ const ExpenseApp = () => {
       ...prevTrans,
       { id: Date.now(), ...transaction },
     ]);
+    console.log(transactions);
   };
+
+  useEffect(() => {
+    let inc = 0;
+    let exp = 0;
+    transactions.forEach((tr) => {
+      tr.type === 'income'
+        ? (inc += parseFloat(tr.amount))
+        : (exp += parseFloat(tr.amount));
+    });
+    setIncome(inc);
+    setExpense(exp);
+  }, [transactions]);
 
   return (
     <section className="flex flex-col items-center w-full max-w-3xl bg-slate-200 rounded-lg text-slate-800 p-5">
