@@ -1,7 +1,7 @@
 import propTypes from 'prop-types';
 
 const Transactions = ({ transactions }) => {
-  return <div>Transactions</div>;
+  return <div>{transactions?.map(tr => <div key={tr.id}>{tr.type} - {tr.amount}</div>)}</div>;
 };
 
 Transactions.propTypes = {

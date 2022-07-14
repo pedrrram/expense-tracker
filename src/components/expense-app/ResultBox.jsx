@@ -1,7 +1,6 @@
 import propTypes from 'prop-types';
 
 const ResultBox = ({ kind, amount }) => {
-
   return (
     <div className="border border-slate-300 rounded-lg flex flex-col p-4 md:w-1/4">
       <span className="font-thin text-xl mb-1">{kind}</span>
@@ -18,7 +17,7 @@ const ResultBox = ({ kind, amount }) => {
 
 ResultBox.propTypes = {
   kind: propTypes.string.isRequired,
-  amount: propTypes.number.isRequired
-}
+  amount: propTypes.number.isRequired,
+};
 
 export default ResultBox;
